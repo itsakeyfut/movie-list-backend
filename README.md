@@ -50,6 +50,26 @@ go get github.com/sirupsen/logrus
 go get github.com/golang-jwt/jwt/v5
 ```
 
+## swag cli
+
+```sh
+go install github.com/swaggo/swag/cmd/swag@latest
+```
+
+## Gin-Swagger
+
+```sh
+go get github.com/swaggo/gin-swagger
+go get github.com/swaggo/files
+go get github.com/swaggo/swag
+```
+
+## golangci-lint
+
+```sh
+go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+```
+
 # Run
 
 ```sh
@@ -61,3 +81,7 @@ go run ./cmd/api/main.go
 ```sh
 curl http://localhost:8080/healthcheck
 ```
+
+# Swagger UI
+
+http://localhost:8090/swagger/index.html

@@ -1,0 +1,15 @@
+linters-settings:
+  unused:
+    # 特定のパターンに一致する未使用の識別子の警告を抑制
+    go-critic:
+      disable-all: false
+      enable:
+        - unused
+      settings:
+        unused:
+          # Swaggerで使用される型など、特定の命名パターンの変数を除外
+          check-exported: false
+
+linters:
+  disable:
+    - unused # 未使用コードの検出を無効化

@@ -22,6 +22,8 @@ services:
       - ./logs:/app/logs
     working_dir: /app
     command: go run cmd/api/main.go
+    networks:
+      - app-network
 
   postgres:
     image: ${DB_IMAGE}
@@ -38,6 +40,28 @@ services:
       - "${DB_PORT}:5432"
     volumes:
       - postgres-data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  swagger-ui:
+    build:
+      context: .
+      dockerfile: ./docker/swagger/Dockerfile
+    image: ${SWAGGER_IMAGE}
+    container_name: swagger-ui
+    environment:
+      - SWAGGER_JSON=/swagger/swagger.json
+      - BASE_URL=/swagger
+    volumes:
+      - ./docs:/swagger
+    ports:
+      - "${SWAGGER_URL}:8080"
+    networks:
+      - app-network
 
 volumes:
   postgres-data:
+
+networks:
+  app-network:
+    driver: bridge
