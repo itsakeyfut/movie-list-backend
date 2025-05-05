@@ -1,2 +1,15 @@
 ### HealthChecker
-GET http://localhost:8080/healthcheck
+GET http://localhost:8080/api/healthcheck
+
+### Add movie
+POST http://localhost:8080/api/movies
+
+Content-Type: application/json
+
+{
+    "title": "test-title",
+    "description": "test-description",
+    "image": "test.png",
+    "release_date": "2025-04-23",
+    "rating": 4.5
+}
