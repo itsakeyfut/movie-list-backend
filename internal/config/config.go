@@ -36,7 +36,7 @@ func LoadEnv() error {
 		DBPort:       getEnv("DB_PORT", "5432"),
 		MaxOpenConns: getEnvAsInt("MAX_OPEN_CONNECTINOS", 10),
 		MaxIdleConns: getEnvAsInt("MAX_IDLE_CONNECTIONS", 5),
-		FrontendUrl: getEnv("FRONTEND_URL", "http://localhost:3000"),
+		FrontendUrl:  getEnv("FRONTEND_URL", "http://localhost:3000"),
 	}
 	return nil
 }
@@ -65,6 +65,17 @@ func getEnvAsInt32(key string, fallback int32) int32 {
 			return int32(value)
 		}
 		log.Printf("Invalid value for %s. Using fallback: %d\n", key, fallback)
+	}
+	return fallback
+}
+
+func getEnvAsBool(key string, fallback bool) bool {
+	if valueStr, exists := os.LookupEnv(key); exists {
+		value, err := strconv.ParseBool(valueStr)
+		if err == nil {
+			return value
+		}
+		log.Printf("Invalid value for %s. Using fallback: %t\n", key, fallback)
 	}
 	return fallback
 }

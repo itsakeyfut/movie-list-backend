@@ -1,7 +1,7 @@
 package persistence
 
 import (
-	"backend/domain/movie"
+	"backend/internal/domain/movie"
 
 	"gorm.io/gorm"
 )

@@ -1,11 +1,11 @@
 package routes
 
 import (
-	"backend/handlers"
+	"backend/internal/handlers"
 
 	"github.com/gin-gonic/gin"
 )
 
 func HealthRoute(rg *gin.RouterGroup) {
-	rg.GET("/health", handlers.HealthCheck)
+	rg.GET("/healthcheck", handlers.HealthCheck)
 }

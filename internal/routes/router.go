@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"backend/handlers"
+	"backend/internal/handlers"
 
 	"github.com/gin-gonic/gin"
 )
@@ -11,9 +11,7 @@ func SetupRouter(movieHandler *handlers.MovieHandler) *gin.Engine {
 
 	api := r.Group("/api")
 	HealthRoute(api)
-
-	movies := r.Group("/movies")
-	MovieRoute(movies, movieHandler)
+	MovieRoute(api, movieHandler)
 
 	return r
 }

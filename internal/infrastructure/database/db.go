@@ -1,7 +1,7 @@
 package database
 
 import (
-	"backend/config"
+	"backend/internal/config"
 	"fmt"
 	"log"
 	"time"
