@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"backend/internal/handlers"
+	"backend/internal/interfaces/api/handlers"
 
 	"github.com/gin-gonic/gin"
 )

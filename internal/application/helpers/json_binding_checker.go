@@ -1,7 +1,7 @@
 package helpers
 
 import (
-	"backend/internal/logger"
+	"backend/internal/application/logger"
 	"net/http"
 
 	"github.com/gin-gonic/gin"

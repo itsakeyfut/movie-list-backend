@@ -18,6 +18,7 @@ type Config struct {
 	MaxOpenConns int
 	MaxIdleConns int
 	FrontendUrl  string
+	JwtSecretKey string
 }
 
 var Env Config
@@ -37,6 +38,7 @@ func LoadEnv() error {
 		MaxOpenConns: getEnvAsInt("MAX_OPEN_CONNECTINOS", 10),
 		MaxIdleConns: getEnvAsInt("MAX_IDLE_CONNECTIONS", 5),
 		FrontendUrl:  getEnv("FRONTEND_URL", "http://localhost:3000"),
+		JwtSecretKey: getEnv("JWT_SECRET_KEY", "secret"),
 	}
 	return nil
 }
