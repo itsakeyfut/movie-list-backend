@@ -32,3 +32,5 @@ gin:
 pg:
 	docker exec -it pg bash
 
+swag:
+	swag init -g cmd/api/main.go -o ./docs
