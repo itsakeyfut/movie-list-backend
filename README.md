@@ -22,6 +22,12 @@ go get gorm.io/gorm
 go get gorm.io/driver/postgres
 ```
 
+## CORS
+
+```sh
+go get github.com/gin-contrib/cors
+```
+
 # Run
 
 ```sh
