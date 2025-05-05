@@ -6,10 +6,14 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func SetupRouter() *gin.Engine {
+func SetupRouter(movieHandler *handlers.MovieHandler) *gin.Engine {
 	r := gin.Default()
 
-	r.GET("/healthcheck", handlers.HealthCheck)
+	api := r.Group("/api")
+	HealthRoute(api)
+
+	movies := r.Group("/movies")
+	MovieRoute(movies, movieHandler)
 
 	return r
 }
