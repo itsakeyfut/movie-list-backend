@@ -44,6 +44,12 @@ go get github.com/sirupsen/logrus
 | `Log.Errorf()` | エラーが発生した場合       |
 | `Log.Fatalf()` | 致命的エラー（アプリ終了） |
 
+## JWT
+
+```sh
+go get github.com/golang-jwt/jwt/v5
+```
+
 # Run
 
 ```sh
