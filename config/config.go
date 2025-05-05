@@ -9,7 +9,6 @@ import (
 
 type Config struct {
 	Port   string
-	Domain string
 }
 
 var Env Config
@@ -21,7 +20,6 @@ func LoadEnv() error {
 
 	Env = Config{
 		Port:   getEnv("PORT", "8080"),
-		Domain: getEnv("DOMAIN", "localhost"),
 	}
 	return nil
 }
