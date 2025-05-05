@@ -1,0 +1,15 @@
+tmp/
+*.exe
+*.out
+*.test
+*.log
+
+.DS_Store
+.vscode/
+.idea/
+
+.git
+.gitignore
+
+logs/
+.env
