@@ -3,13 +3,23 @@
 ## Gin
 
 ```sh
-go get -u github.com/gin-gonic/gin
+go get github.com/gin-gonic/gin
 ```
 
 ## dotenv
 
 ```sh
-go get -u github.com/joho/godotenv
+go get github.com/joho/godotenv
+```
+
+## GORM
+
+```sh
+go get gorm.io/gorm
+```
+
+```sh
+go get gorm.io/driver/postgres
 ```
 
 # Run
